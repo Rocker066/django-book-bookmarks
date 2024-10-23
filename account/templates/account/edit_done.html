@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Edit Done{% endblock %}
+
+{% block content %}
+    {% with user_form.cleaned_data.first_name as first_name%}
+    <h1>Dear {{ first_name|capfirst|default:'user' }}</h1>
+    {% endwith %}
+    <p>
+    Your profile info has been updated.
+    </p>
+    <p><a href="{% url 'dashboard' %}">Go to dashboard</a></p>
+{% endblock %}
